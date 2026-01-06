@@ -1,7 +1,25 @@
 {
   "name": "@metyatech/docusaurus-download-assets",
   "version": "0.1.0",
-  "private": true,
+  "description": "Docusaurus plugin to make docs/**/files assets downloadable via require/import",
+  "keywords": [
+    "docusaurus",
+    "docusaurus-plugin",
+    "webpack",
+    "asset",
+    "download"
+  ],
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "license": "MIT"
 }
