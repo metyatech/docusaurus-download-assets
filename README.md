@@ -1,8 +1,8 @@
 # @metyatech/docusaurus-download-assets
 
-Docusaurus の `docs/**/files/` 配下に置いた付属ファイル（zip/html/txt/pdf 等）を、MDX/Markdown から `require()` / `import` で参照してダウンロードできるようにするためのプラグインです。
+Docusaurus の `docs/**/assets/` 配下に置いた付属ファイル（zip/html/txt/pdf 等）を、MDX/Markdown から `require()` / `import` で参照してダウンロードできるようにするためのプラグインです。
 
-このプラグインは **webpack の `asset/resource`** 設定を追加し、`files/` 配下の任意ファイルをバンドル出力へ含めます。
+このプラグインは **webpack の `asset/resource`** 設定を追加し、`assets/` 配下の任意ファイルをバンドル出力へ含めます。
 
 ## Install
 
@@ -29,17 +29,17 @@ export default config;
 ```
 docs/<chapter>/<slug>/
   index.mdx
-  files/
+  assets/
     sample.zip
 ```
 
 ページ側で `require()` して `href` に渡します（`download` 属性を付けるとファイル名が保持されます）。
 
 ```mdx
-<a href={require('./files/sample.zip')} download="sample.zip">sample.zip をダウンロード</a>
+<a href={require('./assets/sample.zip')} download="sample.zip">sample.zip をダウンロード</a>
 ```
 
 ## Notes
 
-- このプラグインは `files/` 配下のみを対象にします。
+- このプラグインは `assets/`（互換: `files/`）配下のみを対象にします。
 - `js/ts/md/mdx/json` は対象外です（通常どおりDocusaurus/webpackの処理に任せます）。

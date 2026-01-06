@@ -6,7 +6,7 @@ module.exports = function docusaurusDownloadAssetsPlugin() {
         module: {
           rules: [
             {
-              include: [/[/\\]files[/\\]/],
+              include: [/[/\\]assets[/\\]/],
               exclude: /\.(js|jsx|ts|tsx|json|md|mdx)$/i,
               type: 'asset/resource',
             },
