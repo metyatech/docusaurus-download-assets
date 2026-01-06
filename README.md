@@ -4,13 +4,15 @@ Docusaurus の `docs/**/assets/` 配下に置いた付属ファイル（zip/html
 
 このプラグインは **webpack の `asset/resource`** 設定を追加し、`assets/` 配下の任意ファイルをバンドル出力へ含めます。
 
-## Install
+## セットアップ
+
+### インストール
 
 ```bash
 npm i @metyatech/docusaurus-download-assets
 ```
 
-## Usage
+## 使い方
 
 `docusaurus.config.ts` に追加します。
 
@@ -39,7 +41,23 @@ docs/<chapter>/<slug>/
 <a href={require('./assets/sample.zip')} download="sample.zip">sample.zip をダウンロード</a>
 ```
 
-## Notes
+## 開発コマンド
 
-- このプラグインは `assets/`（互換: `files/`）配下のみを対象にします。
-- `js/ts/md/mdx/json` は対象外です（通常どおりDocusaurus/webpackの処理に任せます）。
+- `npm run build`: ビルド
+- `npm test`: ビルド + テスト
+- `npm run clean`: 生成物の削除
+
+## 環境変数/設定
+
+特になし。
+
+## 公開/デプロイ
+
+```bash
+npm publish
+```
+
+## 補足
+
+- `assets/` 配下のみを対象にします。
+- `js/ts/md/mdx/json` は対象外です（通常どおり Docusaurus/webpack の処理に任せます）。
