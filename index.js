@@ -1,4 +1,4 @@
-module.exports = function assetResourcePlugin() {
+module.exports = function docusaurusDownloadAssetsPlugin() {
   return {
     name: 'docusaurus-download-assets',
     configureWebpack() {
