@@ -1,20 +1,20 @@
 # @metyatech/docusaurus-download-assets
 
-Docusaurus の `docs/**/assets/` 配下に置いた付属ファイル（zip/html/txt/pdf 等）を、MDX/Markdown から `require()` / `import` で参照してダウンロードできるようにするためのプラグインです。
+A Docusaurus plugin that makes attachments under `docs/**/assets/` downloadable from MDX/Markdown via `require()` / `import`.
 
-このプラグインは **webpack の `asset/resource`** 設定を追加し、`assets/` 配下の任意ファイルをバンドル出力へ含めます。
+This plugin adds a webpack `asset/resource` rule and emits those assets to the build output.
 
-## セットアップ
+## Setup
 
-### インストール
+### Installation
 
 ```bash
 npm i @metyatech/docusaurus-download-assets
 ```
 
-## 使い方
+## Usage
 
-`docusaurus.config.ts` に追加します。
+Add the plugin to `docusaurus.config.ts`.
 
 ```ts
 // docusaurus.config.ts
@@ -26,7 +26,7 @@ const config = {
 export default config;
 ```
 
-ドキュメントページは次の構成にします。
+Use the following structure.
 
 ```
 docs/<chapter>/<slug>/
@@ -35,29 +35,29 @@ docs/<chapter>/<slug>/
     sample.zip
 ```
 
-ページ側で `require()` して `href` に渡します（`download` 属性を付けるとファイル名が保持されます）。
+Then `require()` the asset and pass it to `href`. Add `download` to preserve the filename.
 
 ```mdx
-<a href={require('./assets/sample.zip')} download="sample.zip">sample.zip をダウンロード</a>
+<a href={require('./assets/sample.zip')} download="sample.zip">Download sample.zip</a>
 ```
 
-## 開発コマンド
+## Development Commands
 
-- `npm run build`: ビルド
-- `npm test`: ビルド + テスト
-- `npm run clean`: 生成物の削除
+- `npm run build`: build
+- `npm test`: build + tests
+- `npm run clean`: remove generated files
 
-## 環境変数/設定
+## Environment Variables/Settings
 
-特になし。
+None.
 
-## 公開/デプロイ
+## Release/Deploy
 
 ```bash
 npm publish
 ```
 
-## 補足
+## Notes
 
-- `assets/` 配下のみを対象にします。
-- `js/ts/md/mdx/json` は対象外です（通常どおり Docusaurus/webpack の処理に任せます）。
+- Only `assets/` is supported.
+- `js/ts/md/mdx/json` are excluded (handled by Docusaurus/webpack as usual).
