@@ -47,6 +47,21 @@ Then `require()` the asset and pass it to `href`. Add `download` to preserve the
 - `npm test`: build + tests
 - `npm run clean`: remove generated files
 
+## AGENTS.md
+
+This project uses `agent-rules` and `agent-rules-tools` as git submodules.
+After cloning, initialize submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+Update `agent-ruleset.json` as needed and regenerate:
+
+```bash
+node agent-rules-tools/tools/compose-agents.cjs
+```
+
 ## Environment Variables/Settings
 
 None.
