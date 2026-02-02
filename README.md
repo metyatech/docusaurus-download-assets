@@ -76,3 +76,12 @@ npm publish
 
 - Only `assets/` is supported.
 - `js/ts/md/mdx/json` are excluded (handled by Docusaurus/webpack as usual).
+
+## Overview
+This repository contains the docusaurus-download-assets project.
+
+## Development Commands
+- Build: `npm run build`
+- Test: `npm run test`
+- Lint: `Not configured (no lint script in package.json).`
+
