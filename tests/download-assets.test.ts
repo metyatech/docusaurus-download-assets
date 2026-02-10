@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import plugin from '../src/index';
+import plugin from '../src/index.js';
 
 test('configureWebpack returns a rule for assets', () => {
   const result = plugin().configureWebpack();

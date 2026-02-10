@@ -19,9 +19,7 @@ Add the plugin to `docusaurus.config.ts`.
 ```ts
 // docusaurus.config.ts
 const config = {
-  plugins: [
-    '@metyatech/docusaurus-download-assets',
-  ],
+  plugins: ['@metyatech/docusaurus-download-assets'],
 };
 export default config;
 ```
@@ -38,14 +36,19 @@ docs/<chapter>/<slug>/
 Then `require()` the asset and pass it to `href`. Add `download` to preserve the filename.
 
 ```mdx
-<a href={require('./assets/sample.zip')} download="sample.zip">Download sample.zip</a>
+<a href={require('./assets/sample.zip')} download="sample.zip">
+  Download sample.zip
+</a>
 ```
 
 ## Development Commands
 
-- `npm run build`: build
-- `npm test`: build + tests
-- `npm run clean`: remove generated files
+- `npm run build`: Build the project
+- `npm test`: Run tests
+- `npm run lint`: Run ESLint
+- `npm run format`: Format the codebase with Prettier
+- `npm run verify`: Run all checks (lint, format, build, test)
+- `npm run clean`: Remove generated files
 
 ## AGENTS.md
 
@@ -76,12 +79,3 @@ npm publish
 
 - Only `assets/` is supported.
 - `js/ts/md/mdx/json` are excluded (handled by Docusaurus/webpack as usual).
-
-## Overview
-This repository contains the docusaurus-download-assets project.
-
-## Development Commands
-- Build: `npm run build`
-- Test: `npm run test`
-- Lint: `Not configured (no lint script in package.json).`
-
