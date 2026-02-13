@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.rmSync('dist-test',{recursive:true,force:true});\"",
+    "clean": "node -e \"import('fs').then(fs=>{fs.rmSync('dist',{recursive:true,force:true}); fs.rmSync('dist-test',{recursive:true,force:true});});\"",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",

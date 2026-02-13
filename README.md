@@ -12,7 +12,7 @@ This plugin adds a webpack `asset/resource` rule and emits those assets to the b
 npm i @metyatech/docusaurus-download-assets
 ```
 
-> **Note:** Since version 0.1.1, this package is ESM-only. Ensure your Docusaurus project (and any consumers) supports ESM resolution.
+> **Note:** Since version 0.2.0, this package is ESM-only. Ensure your Docusaurus project (and any consumers) supports ESM resolution.
 
 ## Usage
 
