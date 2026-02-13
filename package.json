@@ -1,6 +1,6 @@
 {
   "name": "@metyatech/docusaurus-download-assets",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Docusaurus plugin to make docs/**/assets files downloadable via require/import",
   "type": "module",
   "keywords": [
@@ -21,22 +21,22 @@
     "build": "tsc -p tsconfig.json",
     "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.rmSync('dist-test',{recursive:true,force:true});\"",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint .",
     "prepare": "npm run build",
     "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/tests/download-assets.test.js",
-    "verify": "npm run lint && npm run test && npm run build"
+    "verify": "npm run format:check && npm run lint && npm run test"
   },
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.18.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.1",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.4.2",
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.23.0"

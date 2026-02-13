@@ -12,6 +12,8 @@ This plugin adds a webpack `asset/resource` rule and emits those assets to the b
 npm i @metyatech/docusaurus-download-assets
 ```
 
+> **Note:** Since version 0.1.1, this package is ESM-only. Ensure your Docusaurus project (and any consumers) supports ESM resolution.
+
 ## Usage
 
 Add the plugin to `docusaurus.config.ts`.
@@ -50,6 +52,20 @@ Then `require()` the asset and pass it to `href`. Add `download` to preserve the
 - `npm run verify`: Run all checks.
 - `npm run clean`: Remove generated files.
 
+## Release/Publish
+
+To publish a new version:
+
+1. Update the version in `package.json`.
+2. Update `CHANGELOG.md`.
+3. Run `npm run verify`.
+4. Commit and tag the release.
+5. Run `npm publish`.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for details.
+
 ## Security
 
 See [SECURITY.md](SECURITY.md) for details.
@@ -64,4 +80,4 @@ See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details.
 
 ## License
 
-MIT
+[MIT](LICENSE)
