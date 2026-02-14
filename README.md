@@ -14,6 +14,14 @@ npm i @metyatech/docusaurus-download-assets
 
 > **Note:** Since version 0.2.0, this package is ESM-only. Ensure your Docusaurus project (and any consumers) supports ESM resolution.
 
+## Migration from 0.1.x
+
+Version 0.2.0 is a major update that migrates the package to ESM-only.
+
+1. **Docusaurus Config:** If you are using `docusaurus.config.js`, rename it to `docusaurus.config.mjs` or `docusaurus.config.ts`. ESM packages cannot be `require()`d in CommonJS files.
+2. **Imports:** Use `import` instead of `require()` if you are using the plugin in TypeScript/ESM files.
+3. **Node.js Version:** Ensure you are using Node.js 18.18.0 or later.
+
 ## Usage
 
 Add the plugin to `docusaurus.config.ts`.
