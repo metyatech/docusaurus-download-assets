@@ -20,7 +20,7 @@ Version 0.2.0 is a major update that migrates the package to ESM-only.
 
 1. **Docusaurus Config:** If you are using `docusaurus.config.js`, rename it to `docusaurus.config.mjs` or `docusaurus.config.ts`. ESM packages cannot be `require()`d in CommonJS files.
 2. **Imports:** Use `import` instead of `require()` if you are using the plugin in TypeScript/ESM files.
-3. **Node.js Version:** Ensure you are using Node.js 18.18.0 or later.
+3. **Version Requirements:** Ensure you are using Node.js 18.18.0 or later and Docusaurus v3.0 or later (for full ESM support).
 
 ## Usage
 
