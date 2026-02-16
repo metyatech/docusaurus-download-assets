@@ -1,6 +1,6 @@
 {
   "name": "@metyatech/docusaurus-download-assets",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Docusaurus plugin to make docs/**/assets files downloadable via require/import",
   "type": "module",
   "keywords": [
