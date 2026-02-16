@@ -1,7 +1,8 @@
 {
   "name": "@metyatech/docusaurus-download-assets",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Docusaurus plugin to make docs/**/assets files downloadable via require/import",
+  "type": "module",
   "keywords": [
     "docusaurus",
     "docusaurus-plugin",
@@ -9,8 +10,13 @@
     "asset",
     "download"
   ],
-  "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "README.md",
@@ -18,18 +24,31 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.rmSync('dist-test',{recursive:true,force:true});\"",
+    "clean": "node -e \"import('fs').then(({rmSync})=>{rmSync('dist',{recursive:true,force:true}); rmSync('dist-test',{recursive:true,force:true});});\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
     "prepare": "npm run build",
-    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/tests/download-assets.test.js"
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/tests/download-assets.test.js",
+    "verify": "npm run format:check && npm run lint && npm run test"
   },
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metyatech/docusaurus-download-assets.git"
+  },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.18.0"
   },
   "devDependencies": {
-    "typescript": "~5.9.2"
+    "@types/node": "^22.13.1",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.23.0"
   },
   "license": "MIT"
 }
