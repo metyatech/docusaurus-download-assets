@@ -51,14 +51,37 @@ Then `require()` the asset and pass it to `href`. Add `download` to preserve the
 </a>
 ```
 
+## How it works
+
+The plugin registers a `configureWebpack` hook that inserts the following webpack module rule:
+
+| Field     | Value |
+|-----------|-------|
+| `include` | Paths containing `/assets/` or `\assets\` |
+| `exclude` | `.js`, `.jsx`, `.ts`, `.tsx`, `.json`, `.md`, `.mdx` |
+| `type`    | `asset/resource` |
+
+Webpack emits matched files to the output directory with content-hashed filenames and exposes their public URLs for use in `require()` / `import` statements.
+
+## Available options
+
+This plugin takes no configuration options. Call it without arguments:
+
+```ts
+plugins: ['@metyatech/docusaurus-download-assets'],
+```
+
 ## Development Commands
 
-- `npm run build`: Build the project.
-- `npm run test`: Run tests.
-- `npm run lint`: Lint the code.
-- `npm run format`: Format the code.
-- `npm run verify`: Run all checks.
-- `npm run clean`: Remove generated files.
+| Command | Description |
+|---|---|
+| `npm run build` | Compile TypeScript to `dist/` |
+| `npm run clean` | Remove `dist/` and `dist-test/` |
+| `npm test` | Build, compile tests, and run Node built-in test runner |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format source with Prettier |
+| `npm run format:check` | Check formatting without writing |
+| `npm run verify` | format:check + lint + test (used in CI) |
 
 ## Release/Publish
 
