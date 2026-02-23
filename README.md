@@ -55,11 +55,11 @@ Then `require()` the asset and pass it to `href`. Add `download` to preserve the
 
 The plugin registers a `configureWebpack` hook that inserts the following webpack module rule:
 
-| Field     | Value |
-|-----------|-------|
-| `include` | Paths containing `/assets/` or `\assets\` |
+| Field     | Value                                                |
+| --------- | ---------------------------------------------------- |
+| `include` | Paths containing `/assets/` or `\assets\`            |
 | `exclude` | `.js`, `.jsx`, `.ts`, `.tsx`, `.json`, `.md`, `.mdx` |
-| `type`    | `asset/resource` |
+| `type`    | `asset/resource`                                     |
 
 Webpack emits matched files to the output directory with content-hashed filenames and exposes their public URLs for use in `require()` / `import` statements.
 
@@ -73,15 +73,15 @@ plugins: ['@metyatech/docusaurus-download-assets'],
 
 ## Development Commands
 
-| Command | Description |
-|---|---|
-| `npm run build` | Compile TypeScript to `dist/` |
-| `npm run clean` | Remove `dist/` and `dist-test/` |
-| `npm test` | Build, compile tests, and run Node built-in test runner |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format source with Prettier |
-| `npm run format:check` | Check formatting without writing |
-| `npm run verify` | format:check + lint + test (used in CI) |
+| Command                | Description                                             |
+| ---------------------- | ------------------------------------------------------- |
+| `npm run build`        | Compile TypeScript to `dist/`                           |
+| `npm run clean`        | Remove `dist/` and `dist-test/`                         |
+| `npm test`             | Build, compile tests, and run Node built-in test runner |
+| `npm run lint`         | Run ESLint                                              |
+| `npm run format`       | Format source with Prettier                             |
+| `npm run format:check` | Check formatting without writing                        |
+| `npm run verify`       | format:check + lint + test (used in CI)                 |
 
 ## Release/Publish
 
