@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Added `osv-scanner` and `npm audit` to CI workflow for dependency vulnerability scanning.
+- Added CodeQL analysis workflow.
+- Added `husky` and `lint-staged` for automatic pre-commit formatting and linting.
+- Updated `agent-ruleset.json` to be compliant with the latest rules.
+
 ## [1.0.0] - 2026-02-13
 
 ### Changed

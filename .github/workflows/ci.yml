@@ -17,3 +17,16 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run verify
+      - name: Dependency Audit
+        run: npm audit --audit-level=high
+
+  vulnerability-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run OSV-Scanner
+        uses: google/osv-scanner-action/scan@v1
+        with:
+          scan-args: |-
+            --recursive
+            ./
