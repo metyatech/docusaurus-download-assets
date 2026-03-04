@@ -15,7 +15,7 @@ type Plugin = {
   configureWebpack: () => ConfigureWebpackResult;
 };
 
-const ASSET_INCLUDE = [/[/\\]assets[/\\]/];
+const ASSET_INCLUDE = [/(?:^|[/\\])assets[/\\]/];
 const DEFAULT_EXCLUDE = /\.(js|jsx|ts|tsx|json|md|mdx)$/i;
 
 export default function docusaurusDownloadAssetsPlugin(): Plugin {
