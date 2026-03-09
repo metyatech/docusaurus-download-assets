@@ -36,7 +36,7 @@ export default config;
 
 Use the following structure.
 
-```
+```text
 docs/<chapter>/<slug>/
   index.mdx
   assets/

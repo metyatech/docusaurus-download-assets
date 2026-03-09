@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2026-03-09
+
+### Added
+
+- Added `author`, `homepage`, and `bugs` metadata to `package.json` for compliance.
+- Added `markdownlint-cli2` and configured markdown linting.
+- Updated `AGENTS.md` and `agent-ruleset.json` to the latest standards.
+
+### Fixed
+
+- Fixed dependency vulnerabilities (`ajv`, `minimatch`) via `npm audit fix`.
+
 ## [1.0.0] - 2026-02-13
 
 ### Changed

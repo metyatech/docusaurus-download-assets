@@ -1,6 +1,6 @@
 {
   "name": "@metyatech/docusaurus-download-assets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docusaurus plugin to make docs/**/assets files downloadable via require/import",
   "type": "module",
   "keywords": [
@@ -11,6 +11,11 @@
     "download"
   ],
   "types": "dist/index.d.ts",
+  "author": "metyatech",
+  "homepage": "https://github.com/metyatech/docusaurus-download-assets#readme",
+  "bugs": {
+    "url": "https://github.com/metyatech/docusaurus-download-assets/issues"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,9 +33,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "prepare": "npm run build",
     "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/tests/download-assets.test.js",
-    "verify": "npm run format:check && npm run lint && npm run test"
+    "verify": "npm run format:check && npm run lint && npm run lint:markdown && npm run test"
   },
   "publishConfig": {
     "access": "public"
@@ -46,6 +52,7 @@
     "@types/node": "^22.13.1",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
+    "markdownlint-cli2": "^0.21.0",
     "prettier": "^3.4.2",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.23.0"
