@@ -1,5 +1,9 @@
 # @metyatech/docusaurus-download-assets
 
+![CI](https://github.com/metyatech/docusaurus-download-assets/actions/workflows/ci.yml/badge.svg)
+![NPM Version](https://img.shields.io/npm/v/@metyatech/docusaurus-download-assets)
+![License](https://img.shields.io/npm/l/@metyatech/docusaurus-download-assets)
+
 A Docusaurus plugin that makes attachments under `docs/**/assets/` downloadable from MDX/Markdown via `require()` / `import`.
 
 This plugin adds a webpack `asset/resource` rule and emits those assets to the build output.
@@ -62,13 +66,9 @@ Then `require()` the asset and pass it to `href`. Add `download` to preserve the
 
 ## Release/Publish
 
-To publish a new version:
+Releases are automated via GitHub Actions using [Release Please](https://github.com/google-github-actions/release-please-action).
 
-1. Update the version in `package.json`.
-2. Update `CHANGELOG.md`.
-3. Run `npm run verify`.
-4. Commit and tag the release.
-5. Run `npm publish`.
+When features or fixes are merged to `master`, Release Please creates a Pull Request that updates the version and changelog. Merging this PR triggers the release and publishes to npm.
 
 ## Changelog
 
