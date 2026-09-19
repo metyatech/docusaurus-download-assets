@@ -99,7 +99,6 @@ See [CHANGELOG.md](CHANGELOG.md) for details.
 
 ## Security
 
-See [SECURITY.md](SECURITY.md) for details.
 
 ## Contributing
 
