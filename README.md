@@ -97,9 +97,6 @@ To publish a new version:
 
 See [CHANGELOG.md](CHANGELOG.md) for details.
 
-## Security
-
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
